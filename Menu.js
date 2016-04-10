@@ -14,6 +14,7 @@ var {
 } = React;
 
 var EpisodesScreen = require('./EpisodesScreen');
+var TrailerScreen = require('./TrailerScreen');
 
 var Menu = React.createClass({
   render() {
@@ -53,11 +54,13 @@ var Menu = React.createClass({
   // },
 
   _trailerButtonTapped: function() {
-    console.log("_trailerButtonTapped");
+     this.props.navigator.push({
+      title: "Trailer",
+      component: TrailerScreen,
+    });
   },
 
   _episodesButtonTapped: function() {
-    console.log("_episodesButtonTapped");
     this.props.navigator.push({
       title: "Episodes",
       component: EpisodesScreen,
